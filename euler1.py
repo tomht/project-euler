@@ -13,6 +13,8 @@ def gcd(number1, number2):
 
 
 def lcm(number1, number2):
+    if number1 * number2 == 0:
+        raise ValueError
     return (number1 * number2) / gcd(number1, number2)
 
 
