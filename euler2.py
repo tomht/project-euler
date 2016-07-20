@@ -1,6 +1,5 @@
 import math
 
-
 GOLDEN_RATIO = (1 + math.sqrt(5)) / 2
 
 
@@ -12,7 +11,7 @@ def even_fibonacci_number(number):
     return fibonacci_number(3 * number)
 
 
-def euler2(limit):
+def sum_even_fibonacci_numbers_up_to(limit):
     sum = 0
     n = 1
     while True:
@@ -23,3 +22,7 @@ def euler2(limit):
         else:
             break
     return sum
+
+
+def euler2():
+    return sum_even_fibonacci_numbers_up_to(4000000)
