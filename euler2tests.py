@@ -3,29 +3,29 @@ import unittest
 
 
 class GoldenRatioTestCase(unittest.TestCase):
-    def test_golden_ratio_equals_one_point_six_one_eight(self):
+    def test_golden_ratio_equals_1_point_618(self):
         self.assertAlmostEquals(1.618, euler2.GOLDEN_RATIO, 3)
 
 
 class FibonacciNumberTestCase(unittest.TestCase):
-    def test_third_fibonacci_number_is_two(self):
+    def test_3rd_fibonacci_number_is_2(self):
         self.assertEquals(2, euler2.fibonacci_number(3))
 
-    def test_sixth_fibonacci_number_is_eight(self):
+    def test_6th_fibonacci_number_is_8(self):
         self.assertEquals(8, euler2.fibonacci_number(6))
 
-    def test_tenth_fibonacci_number_is_fifty_five(self):
+    def test_10th_fibonacci_number_is_55(self):
         self.assertEquals(55, euler2.fibonacci_number(10))
 
 
 class EvenFibonacciNumberTestCase(unittest.TestCase):
-    def test_first_even_fibonacci_number_is_two(self):
+    def test_1st_even_fibonacci_number_is_2(self):
         self.assertEquals(2, euler2.even_fibonacci_number(1))
 
-    def test_second_even_fibonacci_number_is_eight(self):
+    def test_2nd_even_fibonacci_number_is_8(self):
         self.assertEquals(8, euler2.even_fibonacci_number(2))
 
-    def test_third_even_fibonacci_number_is_thirty_four(self):
+    def test_3rd_even_fibonacci_number_is_34(self):
         self.assertEquals(34, euler2.even_fibonacci_number(3))
 
 
