@@ -18,18 +18,21 @@ def lcm(number1, number2):
     return (number1 * number2) / gcd(number1, number2)
 
 
-def sum_multiples_of(number, limit):
-    if number < 0:
-        raise ValueError
-    if limit < 0:
-        return 0
-    if number == 0:
-        return 0
-    sequence_limit = math.floor(limit / number)
-    return (number * sequence_limit * (sequence_limit + 1)) / 2
+def sum_multiples_of(number1, number2=None, limit=0):
+    if number2 is not None:
+        return sum_multiples_of(number1=number1, limit=limit) \
+               + sum_multiples_of(number1=number2, limit=limit) \
+               - sum_multiples_of(number1=lcm(number1, number2), limit=limit)
+    else:
+        if number1 < 0:
+            raise ValueError
+        if limit < 0:
+            return 0
+        if number1 == 0:
+            return 0
+        sequence_limit = math.floor((limit - 1) / number1)
+        return (number1 * sequence_limit * (sequence_limit + 1)) / 2
 
 
-def euler1(number1, number2, limit):
-    return sum_multiples_of(number1, limit) + sum_multiples_of(number2, limit) - sum_multiples_of(lcm(number1, number2),
-                                                                                                  limit)
-
+def euler1():
+    return sum_multiples_of(3, 5, 1000)

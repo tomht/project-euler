@@ -50,30 +50,40 @@ class LcmTestCase(unittest.TestCase):
 
 
 class SumMultiplesOfTestCase(unittest.TestCase):
-    def test_multiples_of_two_up_to_ten_is_thirty(self):
-        self.assertEqual(euler1.sum_multiples_of(2, 10), 30)
+    def test_multiples_of_two_up_to_ten_is_twenty(self):
+        self.assertEqual(euler1.sum_multiples_of(number1=2, limit=10), 20)
 
-    def test_multiples_of_three_up_to_three_is_three(self):
-        self.assertEqual(euler1.sum_multiples_of(3, 3), 3)
+    def test_multiples_of_three_up_to_three_is_zero(self):
+        self.assertEqual(euler1.sum_multiples_of(number1=3, limit=3), 0)
 
-    def test_multiples_of_one_up_to_five_is_fifteen(self):
-        self.assertEqual(euler1.sum_multiples_of(1, 5), 15)
+    def test_multiples_of_one_up_to_five_is_ten(self):
+        self.assertEqual(euler1.sum_multiples_of(number1=1, limit=5), 10)
 
     def test_multiples_of_zero_is_zero(self):
-        self.assertEqual(euler1.sum_multiples_of(0, 1), 0)
+        self.assertEqual(euler1.sum_multiples_of(number1=0, limit=1), 0)
 
     def test_multiples_up_to_zero_is_zero(self):
-        self.assertEqual(euler1.sum_multiples_of(1, 0), 0)
+        self.assertEqual(euler1.sum_multiples_of(number1=1, limit=0), 0)
 
     def test_multiples_up_to_limit_less_than_number_is_zero(self):
-        self.assertEqual(euler1.sum_multiples_of(5, 3), 0)
+        self.assertEqual(euler1.sum_multiples_of(number1=5, limit=3), 0)
 
     def test_multiples_up_to_negative_limit_is_zero(self):
-        self.assertEqual(euler1.sum_multiples_of(2, -8), 0)
+        self.assertEqual(euler1.sum_multiples_of(number1=2, limit=-8), 0)
 
     def test_multiples_of_negative_number_raises_value_error(self):
         with self.assertRaises(ValueError):
-            euler1.sum_multiples_of(-3, 10)
+            euler1.sum_multiples_of(number1=-3, limit=10)
+
+    def test_multiples_of_two_and_three_up_to_ten_is_thirty_two(self):
+        self.assertEqual(32, euler1.sum_multiples_of(number1=2, number2=3, limit=10))
+
+    def test_multiples_of_three_and_five_up_to_twenty_is_seventy_eight(self):
+        self.assertEqual(78, euler1.sum_multiples_of(number1=3, number2=5, limit=20))
+
+class Euler1TestCase(unittest.TestCase):
+    def test_euler1_returns_233168(self):
+        self.assertEqual(233168, euler1.euler1())
 
 if __name__ == '__main__':
     unittest.main()
