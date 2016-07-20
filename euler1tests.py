@@ -3,82 +3,82 @@ import unittest
 
 
 class GcdTestCase(unittest.TestCase):
-    def test_gcd_ten_and_fifteen_is_five(self):
+    def test_gcd_11_and_15_is_5(self):
         self.assertEqual(euler1.gcd(10, 15), 5)
 
-    def test_gcd_eleven_and_thirteen_is_one(self):
+    def test_gcd_11_and_13_is_1(self):
         self.assertEqual(euler1.gcd(11, 13), 1)
 
-    def test_gcd_fifteen_and_ten_is_five(self):
+    def test_gcd_15_and_10_is_5(self):
         self.assertEqual(euler1.gcd(15, 10), 5)
 
-    def test_gcd_one_and_zero_is_one(self):
+    def test_gcd_1_and_0_is_1(self):
         self.assertEqual(euler1.gcd(1, 0), 1)
 
-    def test_gcd_zero_and_one_is_one(self):
+    def test_gcd_0_and_1_is_1(self):
         self.assertEqual(euler1.gcd(0, 1), 1)
 
-    def test_gcd_zero_and_zero_is_zero(self):
+    def test_gcd_0_and_0_is_0(self):
         self.assertEqual(euler1.gcd(0, 0), 0)
 
-    def test_gcd_minus_ten_and_fifteen_is_five(self):
+    def test_gcd_minus_10_and_15_is_5(self):
         self.assertEqual(euler1.gcd(-10, 15), 5)
 
-    def test_gcd_ten_and_minus_fifteen_is_five(self):
+    def test_gcd_10_and_minus_15_is_5(self):
         self.assertEqual(euler1.gcd(10, -15), 5)
 
-    def test_gcd_minus_ten_and_minus_fifteen_is_five(self):
+    def test_gcd_minus_10_and_minus_15_is_5(self):
         self.assertEqual(euler1.gcd(-10, -15), 5)
 
 
 class LcmTestCase(unittest.TestCase):
-    def test_lcm_two_and_three_is_six(self):
+    def test_lcm_2_and_3_is_6(self):
         self.assertEqual(euler1.lcm(2, 3), 6)
 
-    def test_lcm_two_and_four_is_four(self):
+    def test_lcm_2_and_4_is_4(self):
         self.assertEqual(euler1.lcm(2, 4), 4)
 
-    def test_lcm_four_and_six_is_twelve(self):
+    def test_lcm_4_and_6_is_12(self):
         self.assertEqual(euler1.lcm(4, 6), 12)
 
-    def test_lcm_three_and_two_is_six(self):
+    def test_lcm_3_and_2_is_6(self):
         self.assertEqual(euler1.lcm(3, 2), 6)
 
-    def test_lcm_one_and_zero_raises_value_error(self):
+    def test_lcm_1_and_0_raises_value_error(self):
         with self.assertRaises(ValueError):
             euler1.lcm(1, 0)
 
 
 class SumMultiplesOfTestCase(unittest.TestCase):
-    def test_multiples_of_two_up_to_ten_is_twenty(self):
+    def test_multiples_of_2_up_to_10_is_20(self):
         self.assertEqual(euler1.sum_multiples_of(number1=2, limit=10), 20)
 
-    def test_multiples_of_three_up_to_three_is_zero(self):
+    def test_multiples_of_3_up_to_3_is_0(self):
         self.assertEqual(euler1.sum_multiples_of(number1=3, limit=3), 0)
 
-    def test_multiples_of_one_up_to_five_is_ten(self):
+    def test_multiples_of_1_up_to_5_is_10(self):
         self.assertEqual(euler1.sum_multiples_of(number1=1, limit=5), 10)
 
-    def test_multiples_of_zero_is_zero(self):
+    def test_multiples_of_0_is_0(self):
         self.assertEqual(euler1.sum_multiples_of(number1=0, limit=1), 0)
 
-    def test_multiples_up_to_zero_is_zero(self):
+    def test_multiples_up_to_0_is_0(self):
         self.assertEqual(euler1.sum_multiples_of(number1=1, limit=0), 0)
 
-    def test_multiples_up_to_limit_less_than_number_is_zero(self):
+    def test_multiples_up_to_limit_less_than_number_is_0(self):
         self.assertEqual(euler1.sum_multiples_of(number1=5, limit=3), 0)
 
-    def test_multiples_up_to_negative_limit_is_zero(self):
+    def test_multiples_up_to_negative_limit_is_0(self):
         self.assertEqual(euler1.sum_multiples_of(number1=2, limit=-8), 0)
 
     def test_multiples_of_negative_number_raises_value_error(self):
         with self.assertRaises(ValueError):
             euler1.sum_multiples_of(number1=-3, limit=10)
 
-    def test_multiples_of_two_and_three_up_to_ten_is_thirty_two(self):
+    def test_multiples_of_2_and_3_up_to_10_is_32(self):
         self.assertEqual(32, euler1.sum_multiples_of(number1=2, number2=3, limit=10))
 
-    def test_multiples_of_three_and_five_up_to_twenty_is_seventy_eight(self):
+    def test_multiples_of_3_and_5_up_to_20_is_78(self):
         self.assertEqual(78, euler1.sum_multiples_of(number1=3, number2=5, limit=20))
 
 class Euler1TestCase(unittest.TestCase):
