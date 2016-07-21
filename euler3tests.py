@@ -17,5 +17,10 @@ class LargestPrimeFactorTestCase(unittest.TestCase):
             euler3.largest_prime_factor(1)
 
 
+class Euler3TestCase(unittest.TestCase):
+    def test_euler3_returns_6857(self):
+        self.assertEquals(6857, euler3.euler3())
+
+
 if __name__ == '__main__':
     unittest.main()
