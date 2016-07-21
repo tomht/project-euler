@@ -2,6 +2,14 @@ import math
 
 
 def gcd(number1, number2):
+    """Return the greatest common divisor of two numbers.
+
+    Args:
+        number1: The first number of which to find the GCD.
+        number2: The second number of which to find the GCD.
+    Returns:
+        The greatest common divisor of number1 and number2.
+    """
     n = abs(number1)
     m = abs(number2)
     while n > 0 and m > 0:
@@ -13,6 +21,14 @@ def gcd(number1, number2):
 
 
 def lcm(number1, number2):
+    """Return the lowest common multiple of two numbers.
+
+    Args:
+        number1: The first number of which to find the LCM.
+        number2: The second number of which to find the LCM.
+    Returns:
+        The lowest common multiple of number1 and number2.
+    """
     if number1 * number2 == 0:
         raise ValueError
     return (number1 * number2) / gcd(number1, number2)
