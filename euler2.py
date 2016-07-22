@@ -4,6 +4,13 @@ GOLDEN_RATIO = (1 + math.sqrt(5)) / 2
 
 
 def fibonacci_number(number):
+    """Return the specified Fibonacci number.
+
+    Args:
+        number: The position of the Fibonacci number to return.
+    Returns:
+        The element of the Fibonacci sequence in the position given by number.
+    """
     return round((GOLDEN_RATIO ** number) / math.sqrt(5))
 
 
