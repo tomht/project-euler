@@ -35,6 +35,16 @@ def lcm(number1, number2):
 
 
 def sum_multiples_of(number1, number2=None, limit=0):
+    """Return the sum of all multiples of either one or two numbers, below a limit.
+
+    Args:
+        number1: The first number of which to sum multiples.
+        number2: The optional second number of which to sum multiples.
+        limit: The number below which to sum multiples.
+    Returns:
+        The sum of all multiples of number1 that are strictly less than limit (if number2 is None), or the sum of all
+        multiples of number1 OR number2 that are strictly less than limit (if number2 is not None).
+    """
     if number2 is not None:
         return sum_multiples_of(number1=number1, limit=limit) \
                + sum_multiples_of(number1=number2, limit=limit) \
