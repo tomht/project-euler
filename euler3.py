@@ -2,6 +2,13 @@ import math
 
 
 def largest_prime_factor(number):
+    """Return the largest prime factor of a number.
+
+    Args:
+        number: The number of which to return the largest prime factor.
+    Returns:
+        The largest prime factor of number.
+    """
     candidate_divisor = 2
     largest_prime = 2
     if number <= 1:
