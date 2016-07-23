@@ -15,10 +15,24 @@ def fibonacci_number(number):
 
 
 def even_fibonacci_number(number):
+    """Return the specified even Fibonacci number.
+
+    Args:
+        number: The position of the even Fibonacci number to return.
+    Returns:
+        The element of the sequence of even Fibonacci numbers in the position given by number.
+    """
     return fibonacci_number(3 * number)
 
 
 def sum_even_fibonacci_numbers_up_to(limit):
+    """Return the sum of even Fibonacci numbers less than or equal to a limit.
+
+    Args:
+        limit: The number above which no even Fibonacci numbers should be summed.
+    Returns:
+        The sum of even Fibonacci numbers less than or equal to limit.
+    """
     sum = 0
     n = 1
     while True:
