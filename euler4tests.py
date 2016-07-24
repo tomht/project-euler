@@ -14,3 +14,10 @@ class IsPalindromeTestCase(unittest.TestCase):
 
     def test_10_is_not_palindrome(self):
         self.assertFalse(euler4.is_palindrome(10))
+
+
+class LargestPalindromeProductTestCase(unittest.TestCase):
+    def test_largest_palindrome_product_of_1_digit_numbers_is_9(self):
+        self.assertEquals(9, euler4.largest_palindrome_product(1))
+    def test_largest_palindrome_product_of_2_digit_numbers_is_9009(self):
+        self.assertEquals(9009, euler4.largest_palindrome_product(2))
