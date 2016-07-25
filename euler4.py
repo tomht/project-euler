@@ -2,6 +2,15 @@ import math
 
 
 def is_palindrome(number):
+    """Return whether a number is a palindrome in base 10.
+
+    A number is a palindrome in a particular base if its digits in that base are the same forwards as backwards.
+
+    Args:
+        number: The number to test.
+    Returns:
+        True if number is a palindrome in base 10, False otherwise.
+    """
     working_number = number
     reversed_number = 0
     while working_number > 0:
@@ -9,7 +18,6 @@ def is_palindrome(number):
         reversed_number = (reversed_number * 10) + next_digit
         working_number = math.floor(working_number / 10)
     return reversed_number == number
-
 
 
 def largest_palindrome_product(digits):
