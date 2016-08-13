@@ -17,7 +17,30 @@ def number_of_factors(number, primes=None):
 
 
 def first_triangle_number_with_number_of_factors(factors):
-    return 0
+    number_of_factors_reference = {1: 1}
+    current_number_of_factors = 0
+    current_triangle_number_factor1 = 0
+    current_triangle_number_factor2 = 0
+    index = 0
+    even = True
+    while current_number_of_factors < factors:
+        index += 1
+        even = not even
+        if even:
+            current_triangle_number_factor1 = index / 2
+            current_triangle_number_factor2 = index + 1
+        else:
+            current_triangle_number_factor1 = (index + 1) / 2
+            current_triangle_number_factor2 = index
+        if current_triangle_number_factor1 not in number_of_factors_reference:
+            number_of_factors_reference[current_triangle_number_factor1] \
+                = number_of_factors(current_triangle_number_factor1)
+        if current_triangle_number_factor2 not in number_of_factors_reference:
+            number_of_factors_reference[current_triangle_number_factor2] \
+                = number_of_factors(current_triangle_number_factor2)
+        current_number_of_factors = number_of_factors_reference[current_triangle_number_factor1] \
+                                    * number_of_factors_reference[current_triangle_number_factor2]
+    return current_triangle_number_factor1 * current_triangle_number_factor2
 
 
 def euler12():
