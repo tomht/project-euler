@@ -6,8 +6,8 @@ class NumberOfFactorsTestCase(unittest.TestCase):
     def test_6_has_4_factors(self):
         self.assertEquals(4, euler12.number_of_factors(6))
 
-    def test_32_has_5_factors(self):
-        self.assertEquals(5, euler12.number_of_factors(32))
+    def test_32_has_6_factors(self):
+        self.assertEquals(6, euler12.number_of_factors(32))
 
 
 class FirstTriangleNumberWithNumberOfFactorsTestCase(unittest.TestCase):
