@@ -1,5 +1,24 @@
 def max_product_in_grid(grid):
-    return 0
+    max_product = 0
+    for i in range(len(grid)):
+        for j in range(len(grid[i])):
+            # Horizontal product
+            if j <= len(grid[i]) - 4:
+                horizontal_product = grid[i][j] * grid[i][j + 1] * grid[i][j + 2] * grid[i][j + 3]
+                max_product = max(max_product, horizontal_product)
+            # Vertical product
+            if i <= len(grid) - 4:
+                vertical_product = grid[i][j] * grid[i + 1][j] * grid[i + 2][j] * grid[i + 3][j]
+                max_product = max(max_product, vertical_product)
+            # Top left diagonal product
+            if i <= len(grid) - 4 and j <= len(grid[i]) - 4:
+                top_left_diagonal_product = grid[i][j] * grid[i + 1][j + 1] * grid[i + 2][j + 2] * grid[i + 3][j + 3]
+                max_product = max(max_product, top_left_diagonal_product)
+            # Top right diagonal product
+            if i <= len(grid) - 4 and j >= 3:
+                top_right_diagonal_product = grid[i][j] * grid[i + 1][j - 1] * grid[i + 2][j - 2] * grid[i + 3][j - 3]
+                max_product = max(max_product, top_right_diagonal_product)
+    return max_product
 
 
 def euler11():
@@ -24,8 +43,13 @@ def euler11():
 20 73 35 29 78 31 90 01 74 31 49 71 48 86 81 16 23 57 05 54
 01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48"""
 
-    list_of_strings = grid_string.splitlines()
+    list_of_row_strings = grid_string.splitlines()
     grid = []
-    for row_string in list_of_strings:
-        grid.append(row_string.split())
+    for row_string in list_of_row_strings:
+        cell_strings = row_string.split()
+        row = []
+        for cell_string in cell_strings:
+            cell = int(cell_string)
+            row.append(cell)
+        grid.append(row)
     return max_product_in_grid(grid)
